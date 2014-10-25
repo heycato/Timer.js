@@ -1,5 +1,13 @@
-
-(function(global) {
+(function(name, global, definition){
+	if (typeof module !== "undefined" && module.exports) { 
+		module.exports = definition();
+	} else if (typeof define === "function" && define.amd) {
+		define(definition);
+	} else { 
+		global[name] = definition();
+	}
+})("Timer", this, function(){
+	"use strict";
 
 	global.requestAnimationFrame = global.requestAnimationFrame || (function(){
 		return  global.webkitRequestAnimationFrame ||
@@ -94,7 +102,6 @@
 		}
 	}
 
-	global.Timer = Timer;
+	return Timer;
 
-})(this);
-
+});
