@@ -4,6 +4,7 @@ Timer.js
 ## About
 
 Timer.js uses requestAnimationFrame and performance.now()
+to execute a callback after a delay or at intervals
 
 ## Examples
 
