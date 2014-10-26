@@ -4,9 +4,9 @@
 	} else if (typeof define === "function" && define.amd) {
 		define(definition);
 	} else { 
-		global[name] = definition();
+		global[name] = definition(global);
 	}
-})("Timer", this, function(){
+})("Timer", this, function(global){
 	"use strict";
 
 	global.requestAnimationFrame = global.requestAnimationFrame || (function(){
